@@ -18,7 +18,7 @@ class Settings():
 
         # 子弹设置
         # ~ self.bullet_speed_factor = 3    # 设置子弹速度因素值（接受浮点数,默认比飞船速度低,为了游戏操作体验友善些）后移入动态参数
-        self.bullet_width = 1800   # 子弹宽3,全屏攻击900*2
+        self.bullet_width = 3   # 子弹宽3,全屏攻击900*2
         self.bullet_height = 10   # 子弹高度
         self.bullet_color = 209,154,88    # 子弹颜色RGB值。暗金
         self.bullets_allowed = 9     # 屏幕内子弹数max
@@ -42,7 +42,7 @@ class Settings():
         '''初始化动态变化设置属性，随游戏变动,这里算是动态参数的初始值'''
         self.ship_speed_factor = 2.4    # 设置飞船速度因素值（接受浮点数,可以相对微调）
         self.bullet_speed_factor = 3    # 设置子弹速度因素值（接受浮点数,默认比飞船速度低,为了游戏操作体验友善些）
-        self.alien_speed_factor = 1 # 外星人速度因素(接受浮点型)，默认远小于飞船（难度低，上手简单
+        self.alien_speed_factor = 0.4 # 外星人速度因素(接受浮点型)，默认远小于飞船（难度低，上手简单
 
         #外星人横向移动方向，1向右，-1向左
         self.fleet_direction = 1   # 移动方向
