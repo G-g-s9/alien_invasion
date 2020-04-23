@@ -1,3 +1,4 @@
+import json
 class GameStats():
     """一个用于跟踪游戏统计信息的类"""
     def __init__(self,ai_settings):
@@ -9,8 +10,8 @@ class GameStats():
         #最高得分不应被重置，故在此  不过也就在程序没关闭时才有用（后期加个外部文档记录
         
         try:
-            with open('high_score_value.txt') as file_object:   #读取文件
-                self.high_score = int(file_object.read())     #玩家最高历史得分  
+            with open('high_score_value.json') as file_object:   #读取文件
+                self.high_score = json.load(file_object)     #玩家最高历史得分  
         except ValueError:  #**bug 如果一开始文档内容为空(e..之前不小心写入''报错过）就报错（应该先将初始积分副给历史最高,下面用
             self.high_score = 0
 
