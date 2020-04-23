@@ -5,6 +5,7 @@
 * 函数涉及直接调用的属性、类/模块都要写入形参
 '''
 import sys          # 导入sys模块（这里退出程序用）
+import json
 from time import sleep
 import pygame       # 导入pygame模块，这种导入整个模块的都要用句点.表示法引用
 
@@ -163,8 +164,8 @@ def check_high_score(stats,sb):
     '''检查新得分是否高于历史最高得分，是就在屏幕上更新最高得分image'''
     if stats.score > stats.high_score:  #新得分若大于历史最高分
         stats.high_score = stats.score  #新得分赋给最高值
-        with open('high_score_value.txt','w') as fo:    #写入文档，记录历史最高得分（附加模式将更安全但会积累，后期可适当截取
-            fo.write(str(stats.high_score))
+        with open('high_score_value.json','w') as fo:    #写入文档，记录历史最高得分（附加模式将更安全但会积累，后期可适当截取
+            json.dump(stats.high_score,fo)
         
         sb.prep_high_score()    #实时更新下历史最高得分
     
